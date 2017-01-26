@@ -67,9 +67,12 @@
     };
 
     var drinksOrdered = [];
-
+    var mug;
+    var beans;
 
     function makeCoffee(drinkType) {
+        clearTimeout(mug);
+        clearTimeout(beans);
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
 
@@ -77,11 +80,11 @@
 
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
 
-        setTimeout(function() {
+        mug = setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_mug.jpg');
         } , 1500);
 
-        setTimeout(function() {
+        beans = setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_beans.jpg');
         } , 4000);
     }
