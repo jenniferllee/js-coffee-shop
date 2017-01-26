@@ -68,9 +68,12 @@
 
     var drinksOrdered = [];
 
+
     function makeCoffee(drinkType) {
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
+
+        myRevenueMessage.innerHTML = "$" + revenue();
 
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
 
@@ -83,6 +86,16 @@
         } , 4000);
     }
 
+    function revenue() {
+        var total = 0;
+        for (var i = 0; i < drinksOrdered.length; i++) {
+            var drink = drinksOrdered[i];
+            total = total + prices[drink];
+        }
+        return total.toFixed(2);
+    }
+
+
     myImage.addEventListener('click',
                              function() {return makeCoffee('brew')});
 
@@ -93,7 +106,7 @@
                              function() {return makeCoffee('latte')});
 
     hotChocolate.addEventListener('click',
-                             function() {return makeCoffee('hot-chocolate')});
+                             function() {return makeCoffee('hot chocolate')});
 
 
 
