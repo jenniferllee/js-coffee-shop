@@ -62,22 +62,25 @@
         "hot chocolate": 2.50
     };
 
-    function makeCoffee() {
+    var drinksOrdered = [];
+
+    function makeCoffee(drinkType) {
+        drinksOrdered.push(drinkType);
+        console.log(drinksOrdered);
+
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
-        console.log('machine');
 
         setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_mug.jpg');
-            console.log('mug');
         } , 1500);
 
         setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_beans.jpg');
-            console.log('beans');
         } , 4000);
     }
 
-    myImage.addEventListener('click', makeCoffee);
+    myImage.addEventListener('click',
+                             function() {return makeCoffee('brew')});
 
 
 
