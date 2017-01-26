@@ -51,7 +51,7 @@
     var myImage = document.getElementById("coffee-image");
     myImage.setAttribute('src', 'static/coffee_beans.jpg');
 
-    var myRevenueMessage;
+    var myRevenueMessage = document.getElementById("revenue");
 
     // use this JavaScript object in further study step
 
@@ -62,6 +62,11 @@
         "hot chocolate": 2.50
     };
 
+    function makeCoffee() {
+        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+    }
+
+    myImage.addEventListener('click', makeCoffee);
 
 </script>
 
